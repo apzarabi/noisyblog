@@ -374,10 +374,10 @@ public class Element {
 	public String toString() {
 		String ret = null;
 		if(this.getWrapper() != null)
-			ret = String.format("<%s num=%d, wrap=%d>",
+			ret = String.format("<%s elementNum=%d, wrap=%d>",
 				tagName.toUpperCase(), elementNumber, wrapper.getStyleNodeNumber());
 		else 
-			ret = String.format("<%s num=%d, wrap=-1>",
+			ret = String.format("<%s elementNum=%d, wrap=-1>",
 					tagName.toUpperCase(), elementNumber);
 		if(this.tagName.equals("#text"))
 			ret += "[" + this.getValue() + "] ";

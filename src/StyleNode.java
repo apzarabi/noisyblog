@@ -101,7 +101,7 @@ public class StyleNode {
 	
 	@Override
 	public String toString() {
-		String ret = String.format("<snode #%d, num=%d, elements={ "
+		String ret = String.format("<snode #%d, stylenodeNum=%d, elements={ "
 				,repetition, styleNodeNumber);
 		for (Element element : elements) 
 			ret += element.toString() + ", ";
