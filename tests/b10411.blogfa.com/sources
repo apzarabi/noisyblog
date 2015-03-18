@@ -1,0 +1,10 @@
+private static List<String> sources = Arrays.asList(
+			"http://b10411.blogfa.com/post-426.aspx",
+			"http://b10411.blogfa.com/post-425.aspx",
+			"http://b10411.blogfa.com/post-424.aspx",
+			"http://b10411.blogfa.com/post-423.aspx",
+			"http://b10411.blogfa.com/post-422.aspx",
+			"http://b10411.blogfa.com/post-421.aspx",
+			"http://b10411.blogfa.com/post-420.aspx");
+			
+private static String target = "http://b10411.blogfa.com/post-418.aspx";
