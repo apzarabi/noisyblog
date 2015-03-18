@@ -14,7 +14,7 @@ public class Test {
 	//a path to the directory, containing a file "sources"
 	//the first line should show the target page, 
 	//and all other line should be url to post for building StyleTree
-	static String sourceFolderPath = "tests/jamaran.ir";
+	static String sourceFolderPath = "tests/shirazi.blogfa.com";
 	static ArrayList<String> sources = new ArrayList<String>();
 	static String target;
 
