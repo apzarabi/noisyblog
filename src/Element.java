@@ -110,10 +110,10 @@ public class Element {
 			for (int i = 0; i < children.size(); i++)
 				sigma += (double)children.get(i).getRepetition()/sum * children.get(i).comImp();
 			compImportance = (1 - Math.pow(gama, l)) * nodeImp() + Math.pow(gama, l) * sigma;
-			if (attrs.getNamedItem("id") != null) {
-				System.err.println(attrs.getNamedItem("id") + " "+  Math.pow(gama, l)+ " " + sigma + " " + compImportance
-						+ " " + nodeImp());
-			}
+//			if (attrs.getNamedItem("id") != null) {
+//				System.err.println(attrs.getNamedItem("id") + " "+  Math.pow(gama, l)+ " " + sigma + " " + compImportance +
+//						" " + nodeImp());
+//			}
 			return compImportance;
 		}
 		else {
