@@ -137,8 +137,9 @@ public class StyleTree {
 		html = "<!DOCTYPE html>\n" + html;
 		return html;
 	}
-	public void getContent(StyleTree styleTree) {
-
+	
+	public String getContent() {
+		return this.getRoot().getContent().toString();
 	}
 
 	public Element getRoot() {

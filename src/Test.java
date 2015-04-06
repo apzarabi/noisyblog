@@ -14,7 +14,8 @@ public class Test {
 	//a path to the directory, containing a file "sources"
 	//the first line should show the target page, 
 	//and all other line should be url to post for building StyleTree
-	static String sourceFolderPath = "tests/gatkolayesabz.blogfa.com";
+	//there will be an output.html and output.txt representing the output
+	static String sourceFolderPath = "tests/chenan.blogfa.com";
 	static ArrayList<String> sources = new ArrayList<String>();
 	static String target;
 
@@ -36,6 +37,7 @@ public class Test {
 		System.out.println("######\n\n####");
 		System.out.println(pst.toHTML());	
 		writeToFile(pst.toHTML(), sourceFolderPath+"/output.html");
+		writeToFile(pst.getContent(), sourceFolderPath + "/output.txt");
 	}
 	
 	public static void writeToFile(String content, String path){

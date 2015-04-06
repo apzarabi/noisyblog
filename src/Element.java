@@ -321,6 +321,28 @@ public class Element {
 		return ret;
 	}
 	
+	/**
+	 * this method returns the content of this element and all of it's 
+	 * children in text format (not in HTML)
+	 * @return
+	 */
+	public StringBuffer getContent(){
+		if( this.isNoisy() )
+			return new StringBuffer();
+		if(this.getTagName().equals("#text"))
+			return new StringBuffer(this.getValue());
+		if( this.getChildren() != null ){
+			StringBuffer buf = new StringBuffer();
+			if( this.getChildren().size() > 1 )
+				throw new RuntimeException("getContent: PageStyleTree needed.");
+			StyleNode stylenode = this.getChildren().get(0);
+			for(Element element: stylenode.getElements())
+				buf.append(element.getContent()).append(' ');
+			return buf;
+		}
+		return new StringBuffer();
+	}
+	
 	public String toHtml(){
 		if( this.isNoisy() )
 			return "";
