@@ -1,3 +1,4 @@
+package templater;
 
 import java.io.InputStream;
 import java.net.URL;

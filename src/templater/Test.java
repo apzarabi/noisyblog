@@ -1,3 +1,4 @@
+package templater;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -25,13 +26,13 @@ public class Test {
 		setSources(sourceFolderPath + "/sources");
 		
 		//building SiteStyleTree
-		StyleTree tree = urlToStyleTree(sources.get(0));
+		StyleTree tree = Run.urlToStyleTree(sources.get(0));
 		buildStyleTree(tree);		
 		tree.mark(tree.getRoot());
 		tree.print();
 		
 		//creating PageStyleTree and mapping
-		StyleTree pst =urlToStyleTree(target);
+		StyleTree pst = Run.urlToStyleTree(target);
 		tree.MapSST(pst);
 //		pst.print();
 		System.out.println("######\n\n####");
@@ -79,16 +80,9 @@ public class Test {
 	public static void buildStyleTree(StyleTree tree){
 		for(int i = 0; i<sources.size(); i++){
 			String input = sources.get(i);
-			StyleTree page = urlToStyleTree(input);
+			StyleTree page = Run.urlToStyleTree(input);
 			tree.update(page);
 		}
-	}
-	
-	public static StyleTree urlToStyleTree(String url){
-		org.w3c.dom.Document doc = Run.openURL(url);
-		org.w3c.dom.Element root = doc.getDocumentElement();
-		StyleTree tree = new StyleTree(root);
-		return tree;
 	}
 	
 	public static void printAllAttrs(Element e){

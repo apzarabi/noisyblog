@@ -1,3 +1,4 @@
+package templater;
 import java.io.IOException;
 
 public class Q2 {

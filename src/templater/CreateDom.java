@@ -1,3 +1,4 @@
+package templater;
 
 import java.io.StringWriter;
 import java.io.Writer;

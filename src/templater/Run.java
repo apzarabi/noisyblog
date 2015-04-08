@@ -1,3 +1,4 @@
+package templater;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -20,6 +21,20 @@ import org.xml.sax.InputSource;
 
 
 public class Run {
+	
+	public static StyleTree urlToStyleTree(String url){
+		org.w3c.dom.Document doc = Run.openURL(url);
+		org.w3c.dom.Element root = doc.getDocumentElement();
+		StyleTree tree = new StyleTree(root);
+		return tree;
+	}
+	
+	public static StyleTree fileToStyleTree(String filename){
+		org.w3c.dom.Document doc = Run.openFile(filename);
+		org.w3c.dom.Element root = doc.getDocumentElement();
+		StyleTree tree = new StyleTree(root);
+		return tree;
+	}
 	
 	/**
 	 * 
