@@ -73,6 +73,7 @@ public class Test {
 				sources.add(newLine);
 			}
 		}
+		textReader.close();
 		return;
 	}
 	

@@ -1,7 +1,12 @@
 package blogtester;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
+
+import templater.StyleTree;
 
 // about /blog.ir/:
 // this folder contains 94 weblogs. 12 of them with just 2 posts,
@@ -14,10 +19,18 @@ public class Main {
 	static File dir = new File("blog.ir/");
 	
 	public static void main(String[] args) {
-		fillWeblogs();		
+		fillWeblogs();	
+		for(Weblog weblog: weblogs){
+			weblog.fillContent();
+			weblog.writeContentToFile();
+		}
 	}
+
 	
-	
+	/**
+	 * at start, this method should be called. it looks at the /blog.ir/ 
+	 * and finds all weblogs in it.
+	 */
 	public static void fillWeblogs(){
 		String[] list = dir.list();
 		weblogs = new ArrayList<Weblog>(list.length/3);
@@ -31,7 +44,7 @@ public class Main {
 				continue;
 			if(weblogs.size() == 0 || (!weblogs.get(weblogs.size()-1).url.equals(tokens[0]))){
 				currentWeblog = new Weblog();
-				currentWeblog.url = tokens[0];
+				currentWeblog.url = dir + tokens[0];
 				currentWeblog.post_number.add(Integer.parseInt(tokens[1]));
 				weblogs.add(currentWeblog);
 			}
